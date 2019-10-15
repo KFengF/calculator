@@ -103,9 +103,19 @@ class App extends React.Component {
 
         '+': () => this.setOperator('+'),
 
-        '=': () => this.setState({ display: eval(this.state.calculation).toString() }, () => {
-            this.setState({ calculation: '' })
-        }),
+        '=': () => {
+            const { calculation, display } = this.state;
+            if ( !isNaN(calculation[calculation.length - 1]) ) {
+                this.setState({ display: eval(this.state.calculation).toString() }, () => {
+                    this.setState({ calculation: '' })
+                });
+            } else {
+                const temporal = display;
+                this.setState({ display: 'Syntax Error' }, () => setTimeout(() => {
+                    this.setState({ display: temporal });
+                }, 2000));
+            }
+        },
 
         '.': () => {
             const { calculation, display } = this.state;
