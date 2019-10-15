@@ -1,13 +1,140 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import 'https://fonts.googleapis.com/css?family=Share+Tech+Mono';
+@font-face {
+    font-family: "Digital";
+    src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix") format("embedded-opentype"), 
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2") format("woff2"), 
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff") format("woff"), 
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf") format("truetype");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle, #fcfcfc, #8686db);
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 10px;
+}
+
+#App {
+    margin: 50px 0;
+    width: 90%;
+    max-width: 348px;
+}
+
+#App h1 {
+    padding: 1em;
+    text-align: center;
+    color: #fff;
+    font-size: 2.2em;
+    font-family: 'Share Tech Mono', monospace;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    background-color: #999;
+    background: linear-gradient(180deg, #aaa, #888);
+    border-left: 4px solid #333;
+    border-right: 4px solid #333;
+    box-shadow: 10px 1.5px 2px rgba(0, 0, 0, 0.5);
+}
+
+#App .container {
+    background: linear-gradient(#888,#ccc);
+    padding: 0 2em 2em;
+    border-left: 4px solid #333;
+    border-right: 4px solid #333;
+    box-shadow: 10px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#App h2 {
+    margin-bottom: 0.8em;
+    width: 100%;
+    padding: 0.1em 0.4em;
+    font-size: 4.5em;
+    font-family: "Digital", monospace;
+    text-align: right;
+    color: rgb(152, 162, 252);
+    border: 4px solid #ccc;
+    border-style: inset;
+    background-color: rgb(1, 1, 41);
+}
+
+#App .bottom {
+    padding: 2em;
+    border-bottom-left-radius:50%;
+    border-bottom-right-radius:50%;
+    background:linear-gradient(360deg, #777, #ccc);
+    border-left: 4px solid #333;
+    border-right: 4px solid #333;
+    box-shadow: 10px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#App .buttons-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    padding: 1.8em 1em;
+    border-radius: 1em;
+    background-color: #222;
+}
+
+.Button {
+    max-width: 2em;
+    height: 1.5em;
+    margin: 5px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 3em;
+    border-radius: 5px;
+    background: radial-gradient(circle, #fff, #ddd);
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.5);
+}
+
+.Button:hover {
+    cursor: pointer;
+}
+
+#C, #\<- {
+    background: radial-gradient(circle,rgb(245, 154, 154),rgb(192, 40, 40));
+    color: #eee;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+#\+, #\-, #x, #\/, #\= {
+    background: radial-gradient(circle,#eee,rgb(124, 124, 124));
+}
+
+input[id$='0'] {
+    max-width: 4.3em;
+    grid-column: 1 / 3;
+}
+
+#\. {
+    grid-column: 3 / 4;
+}
+
+#\= {
+    height: auto;
+    grid-row: 4 / 6;
+    grid-column: 4 / 5;
+}
+
+@media (max-width: 360px) {
+    #root {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 320px) {
+    #root {
+        font-size: 8px;
+    }
 }
