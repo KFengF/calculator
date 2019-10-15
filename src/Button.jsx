@@ -6,7 +6,8 @@ class Button extends React.Component {
             let { button, buttonFunction } = this.props;
             if ( event.key === 'Backspace' && button === '<-' ) { button = 'Backspace' };
             if ( event.key === '*' && button === 'x' ) { button = '*' };
-            if ( event.key === 'C' && button === 'c' ) { button = 'c' };
+            if ( event.key === 'c' && button === 'C' ) { button = 'c' };
+            if ( event.key === 'Enter' && button === '=' ) { button = 'Enter' }
             if ( event.key === button.toString() ) buttonFunction(event) ;
         })
     }
